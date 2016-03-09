@@ -62,7 +62,7 @@ function buildCard(infoForPeople, cardsforDom) {
   var populateStringFromArray ="";
   for (var i = 0; i < cardsforDom.length; i++) {
     console.log(populateStringFromArray);
-    
+    //build the input for the dom  - person header section paragraph footer
     populateStringFromArray += "<person class='person'> <header>" + 
     cardsforDom[i].title +": " +
     cardsforDom[i].name +"</header> <section>" + "<p>" +
@@ -79,8 +79,26 @@ function buildCard(infoForPeople, cardsforDom) {
 buildCard(infoForPeople, cardsforDom);
 
 
-
-
+// requirement 8. When you click on one of the person elements, 
+//a dotted border should appear around it.
+function watchTheCardsForInput() {
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("click", function() {
+      // Unselects all boxes after click and before the new one is added
+      for (var j = 0; j < cards.length; j++) {
+          cards[j].classList.remove("dottedBorder");
+      }
+      //"this" targets cards which is the Constructor
+      this.classList.toggle("dottedBorder"); 
+      console.log("THIS", this );
+      // Requirement 9. When you click on one of the person elements, 
+      //the text input should immediately gain focus so that you
+      //can start typing.
+      inputBox.focus();
+        });
+    }
+}
+watchTheCardsForInput();
 
 
 

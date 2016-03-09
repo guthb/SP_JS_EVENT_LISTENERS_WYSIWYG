@@ -43,3 +43,7 @@ have a light blue background.*/
     margin-bottom: 40px;
 }
 
+/* requirement 8. dotted border*/
+.dottedBorder {
+    border: 10px dotted blue;
+}
