@@ -1,0 +1,45 @@
+/*Reuirement 4. Style your person elements however you like.*/
+input {
+    margin: 10px 25%;
+    border: 2px solid black;
+    width: 60%;
+    padding: 5px;
+}
+
+img {
+    margin: 5px auto;
+    border: 3px solid black;
+    max-width: 500px;
+    height: 100px;
+    display: block;
+}
+
+#famousPeople > person {
+    padding: 20px;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center
+}
+
+
+/*requirement 5. and 6. For every even numbered element, have a 
+light yellow background. and for every odd numbered element, 
+have a light blue background.*/
+#famousPeople > person:nth-child(2n+1) {
+    background-color: lightblue;
+}
+
+#famousPeople > person:nth-child(2n) {
+    background-color: lightyellow;
+}
+
+#famousPeople:nth-of-type(1) {
+    display: block;
+}
+
+#famousPeople:nth-child(3) {
+    display: block;
+    margin-bottom: 40px;
+}
+
