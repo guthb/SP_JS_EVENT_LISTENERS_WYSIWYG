@@ -78,7 +78,6 @@ function buildCard(infoForPeople, cardsforDom) {
 //build the cards.. pass in information array and the dom target
 buildCard(infoForPeople, cardsforDom);
 
-
 // requirement 8. When you click on one of the person elements, 
 //a dotted border should appear around it.
 function watchTheCardsForInput() {
@@ -100,8 +99,26 @@ function watchTheCardsForInput() {
 }
 watchTheCardsForInput();
 
+// Requirement 10 When there is a highlighted person element, and you begin typing 
+//in the input box, the person's biography should be immediately bound to what 
+//you are typing, letter by letter.
 
+function nextCard(event) {
+    var selectedCard = document.getElementsByClassName("dottedBorder")[0];
+    if (selectedCard !== undefined) {
+        var userText = inputBox.value;
+        var cardChange = selectedCard.getElementsByTagName("p")[0];
+        cardChange.innerHTML = userText;
+    }
+ //Requirement 11. When you press the enter/return key when typing in the input 
+ //field, then the content of the input field should immediately be blank.   
+    if (event.code === "Enter") {
+        inputBox.value = "";
+    }
+};
 
+inputBox.addEventListener("keyup", nextCard);
+console.log("inputBox", inputBox);
 
 
 
